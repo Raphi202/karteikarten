@@ -7,8 +7,8 @@
 <style>
 :root{--bg:#0f0f13;--sf:#1a1a22;--ac:#f0b429;--ac2:#4fd1a5;--tx:#e8e8f0;--mu:#8888aa;--br:rgba(255,255,255,.08);--gut:#4fd1a5;--mittel:#fbbf24;--bad:#f87060;--neu:#94a3b8;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-height:100vh;}
-.hdr{background:var(--sf);border-bottom:1px solid var(--br);padding:10px 14px 7px;position:sticky;top:0;z-index:50;}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-height:100vh;width:100%;}
+.hdr{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:10px 14px 7px;position:sticky;top:0;z-index:50;}
 .hdr-top{display:flex;justify-content:space-between;align-items:center;}
 .hdr-title{font-size:1.1rem;color:var(--ac);font-weight:700;}
 .hdr-sync{font-size:.6rem;color:var(--mu);margin-top:2px;display:flex;align-items:center;gap:5px;}
@@ -16,7 +16,7 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .sdot.ok{background:var(--gut);}.sdot.sy{background:var(--mittel);animation:blink 1s infinite;}.sdot.er{background:var(--bad);}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 .out-btn{padding:3px 9px;border-radius:8px;font-size:.6rem;font-weight:600;cursor:pointer;background:rgba(248,112,96,.12);color:var(--bad);border:1px solid rgba(248,112,96,.3);}
-.xpbar{background:var(--sf);border-bottom:1px solid var(--br);padding:6px 14px;display:flex;align-items:center;gap:8px;cursor:pointer;}
+.xpbar{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:6px 14px;display:flex;align-items:center;gap:8px;cursor:pointer;}
 .lvlbadge{padding:3px 9px;border-radius:8px;background:rgba(240,180,41,.15);border:1px solid rgba(240,180,41,.3);color:var(--ac);font-size:.68rem;font-weight:700;white-space:nowrap;flex-shrink:0;}
 .xpmid{flex:1;min-width:0;}.xplbl{display:flex;justify-content:space-between;font-size:.57rem;color:var(--mu);margin-bottom:3px;}
 .xptrack{height:5px;background:var(--br);border-radius:3px;overflow:hidden;}.xpfill{height:100%;background:linear-gradient(90deg,var(--ac),#ff9500);border-radius:3px;transition:width .5s;}
@@ -58,21 +58,21 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .cpbar{flex:1;height:5px;background:var(--br);border-radius:3px;overflow:hidden;}.cpfill{height:100%;border-radius:3px;}.cpnum{font-size:.6rem;color:var(--mu);width:30px;text-align:right;}
 .blkbtn{width:100%;padding:10px;border-radius:9px;border:none;font-size:.82rem;font-weight:600;cursor:pointer;margin-top:6px;}
 .bbl{background:rgba(248,112,96,.12);color:var(--bad);border:1.5px solid rgba(248,112,96,.25);}.bubl{background:rgba(79,209,165,.12);color:var(--gut);border:1.5px solid rgba(79,209,165,.25);}
-#loginWrap{display:flex;flex-direction:column;align-items:center;padding:50px 20px;gap:14px;text-align:center;}
+#loginWrap{display:flex;flex-direction:column;align-items:center;padding:50px 20px;gap:14px;text-align:center;width:100%;}
 #loginWrap h1{font-size:1.6rem;color:var(--ac);}#loginWrap p{font-size:.85rem;color:var(--mu);line-height:1.5;}
 #nameInp{width:100%;max-width:340px;padding:12px 14px;border-radius:10px;border:1.5px solid var(--br);background:var(--sf);color:var(--tx);font-size:.9rem;outline:none;}
 #nameInp:focus{border-color:var(--ac);}
 #loginBtn{width:100%;max-width:340px;padding:13px;border-radius:10px;border:none;background:var(--ac);color:#0f0f13;font-size:.95rem;font-weight:700;cursor:pointer;}
 #lerr{color:var(--bad);font-size:.78rem;min-height:16px;}
 #blockedWrap{flex-direction:column;align-items:center;padding:60px 20px;gap:14px;text-align:center;}
-.modebar{padding:7px 12px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
+.modebar{width:100%;padding:7px 12px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
 .modebar::-webkit-scrollbar{display:none;}
 .mbtn{flex-shrink:0;padding:7px 13px;border-radius:11px;border:1.5px solid var(--br);background:transparent;color:var(--mu);font-size:.71rem;font-weight:500;cursor:pointer;white-space:nowrap;}
 .mbtn.on{background:var(--ac);color:#0f0f13;border-color:var(--ac);font-weight:700;}
-.statsbar{padding:6px 12px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
+.statsbar{width:100%;padding:6px 12px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
 .statsbar::-webkit-scrollbar{display:none;}
 .spill{flex-shrink:0;padding:4px 10px;border-radius:20px;font-size:.63rem;font-weight:600;cursor:pointer;border:1.5px solid transparent;white-space:nowrap;}
-.catbar{padding:6px 12px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
+.catbar{width:100%;padding:6px 12px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
 .catbar::-webkit-scrollbar{display:none;}
 .catbtn{flex-shrink:0;padding:5px 11px;border-radius:20px;border:1.5px solid var(--br);background:transparent;color:var(--mu);font-size:.67rem;font-weight:500;cursor:pointer;white-space:nowrap;}
 .catbtn.on{color:#0f0f13;font-weight:700;border-color:transparent;}.catsep{flex-shrink:0;width:1px;background:var(--br);margin:0 3px;}
@@ -83,7 +83,7 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .content{padding:6px 12px 0;}
 .nxtlbl{font-size:.58rem;color:var(--mu);text-align:center;min-height:14px;margin-bottom:3px;}
 .cardwrap{width:100%;perspective:1000px;margin-bottom:8px;}
-.card{width:100%;min-height:210px;position:relative;transform-style:preserve-3d;transition:transform .45s ease;cursor:pointer;border-radius:15px;}
+.card{width:100%;min-height:240px;position:relative;transform-style:preserve-3d;transition:transform .45s ease;cursor:pointer;border-radius:15px;}
 .card.flip{transform:rotateY(180deg);}
 .face{position:absolute;inset:0;border-radius:15px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;padding:15px 14px;border:1px solid var(--br);}
 .front{background:#1e2235;}.back{background:#1a2e1e;transform:rotateY(180deg);}
@@ -93,7 +93,7 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .ctag{font-size:.55rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:20px;display:inline-block;margin-bottom:9px;align-self:flex-start;}
 .chi{font-size:.57rem;color:var(--mu);margin-bottom:4px;}
 .cq{font-size:1rem;line-height:1.4;color:var(--tx);flex:1;font-weight:500;}
-.catext{font-size:.82rem;line-height:1.6;color:#d4f5e8;flex:1;}
+.catext{font-size:.82rem;line-height:1.6;color:#d4f5e8;flex:1;overflow-y:auto;}
 .abl{font-size:.54rem;color:var(--ac2);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;font-weight:600;}
 .ivrow{display:flex;gap:4px;margin-bottom:5px;}.iv{flex:1;text-align:center;font-size:.56rem;color:var(--mu);}
 .iv b{display:block;font-size:.74rem;font-weight:700;}.iv.iv1 b{color:var(--bad);}.iv.iv2 b{color:var(--mittel);}.iv.iv3 b{color:var(--gut);}
@@ -143,10 +143,32 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .gitem:active{background:rgba(240,180,41,.08);border-color:rgba(240,180,41,.3);}
 .gicon{font-size:1.4rem;flex-shrink:0;}.gname{font-size:.84rem;font-weight:600;}.gsub{font-size:.62rem;color:var(--mu);margin-top:2px;}
 .glossar-fab{position:fixed;bottom:20px;right:16px;z-index:300;width:48px;height:48px;border-radius:50%;background:var(--sf);border:2px solid rgba(240,180,41,.4);color:var(--ac);font-size:1.2rem;display:none;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.4);}
+
+.term-popup{position:fixed;z-index:500;background:#1e2235;border:1.5px solid var(--ac);border-radius:12px;padding:11px 13px;max-width:265px;box-shadow:0 8px 24px rgba(0,0,0,.5);display:none;}
+.term-popup.show{display:block;animation:popIn .15s ease;}
+@keyframes popIn{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
+.tp-head{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
+.tp-emoji{font-size:1.3rem;flex-shrink:0;}
+.tp-name{font-size:.82rem;font-weight:700;color:var(--ac);}
+.tp-cat{font-size:.58rem;padding:1px 6px;border-radius:10px;display:inline-block;margin-top:2px;}
+.tp-cat.bauteil{background:rgba(79,209,165,.15);color:var(--ac2);}
+.tp-cat.norm{background:rgba(240,180,41,.15);color:var(--ac);}
+.tp-cat.begriff{background:rgba(96,165,250,.15);color:#60a5fa;}
+.tp-text{font-size:.74rem;line-height:1.5;color:var(--tx);margin-bottom:8px;}
+.tp-more{width:100%;padding:6px;border-radius:8px;border:1px solid rgba(240,180,41,.3);background:rgba(240,180,41,.12);color:var(--ac);font-size:.72rem;font-weight:700;cursor:pointer;}
+.tlink{color:var(--ac);text-decoration:underline;text-decoration-style:dotted;cursor:pointer;font-weight:600;}
 </style>
 </head>
 <body>
 
+<div class="term-popup" id="termPopup">
+  <div class="tp-head">
+    <span class="tp-emoji" id="tp-emoji">🔧</span>
+    <div><div class="tp-name" id="tp-name">Begriff</div><span class="tp-cat" id="tp-cat">Bauteil</span></div>
+  </div>
+  <div class="tp-text" id="tp-text"></div>
+  <button class="tp-more" onclick="openGlossarFromPopup()">Vollständige Erklärung →</button>
+</div>
 <div id="xppop" class="xppop">+5 XP</div>
 
 <div class="lvlup" id="lvlup">
@@ -397,11 +419,12 @@ function markTerms(text) {
     if(key.length < 3) continue;
     try {
       const escaped = key.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-      const rx = new RegExp('('+escaped+')', 'gi');
+      // Nur ganze Wörter matchen - verhindert "Mag" in "Magnetische"
+      const rx = new RegExp('(?<![\\wäöüÄÖÜ])('+escaped+')(?![\\wäöüÄÖÜ])', 'gi');
       result = result.replace(rx, match => {
         const gid = LOOKUP[key.toLowerCase()];
         const ph = '___T'+reps.length+'___';
-        reps.push('<span class="tlink" onclick="openGlossar(\''+gid+'\')">'+match+'</span>');
+        reps.push('<span class="tlink" onclick="showTermPopup(\''+gid+'\')">'+match+'</span>');
         return ph;
       });
     } catch(e) { /* skip bad regex */ }
@@ -424,6 +447,50 @@ function openGlossar(id) {
   el('g-content').innerHTML = html;
   el('g-note').value = notes[id]||'';
   el('glossarSheet').classList.add('open');
+}
+
+
+
+let currentPopupId = null;
+let popupTimeout = null;
+
+function showTermPopup(id, evt) { evt = evt || null;
+  const g = GLOSSAR_MAP[id];
+  if(!g) return;
+  if(evt) evt.stopPropagation();
+  currentPopupId = id;
+  document.getElementById('tp-emoji').textContent = g.emoji;
+  document.getElementById('tp-name').textContent = g.name;
+  const ce = document.getElementById('tp-cat');
+  ce.className = 'tp-cat ' + g.cat;
+  ce.textContent = g.cat==='bauteil' ? '🔧 Bauteil' : g.cat==='norm' ? '📋 Norm' : '💡 Begriff';
+  const short = g.funktion.length > 115 ? g.funktion.slice(0,115)+'...' : g.funktion;
+  document.getElementById('tp-text').textContent = short;
+  const popup = document.getElementById('termPopup');
+  popup.classList.add('show');
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const pw = 270;
+  const cx = evt ? evt.clientX : vw/2;
+  const cy = evt ? evt.clientY : vh/2;
+  const left = Math.max(8, Math.min(cx - pw/2, vw - pw - 8));
+  const top = cy > vh/2 ? Math.max(8, cy - 190) : cy + 20;
+  popup.style.left = left + 'px';
+  popup.style.top = top + 'px';
+  if(popupTimeout) clearTimeout(popupTimeout);
+  popupTimeout = setTimeout(hideTermPopup, 7000);
+}
+
+function hideTermPopup() {
+  const p = document.getElementById('termPopup');
+  if(p) p.classList.remove('show');
+  currentPopupId = null;
+}
+
+function openGlossarFromPopup() {
+  const id = currentPopupId;
+  hideTermPopup();
+  if(id) openGlossar(id);
 }
 
 function closeGlossar() { el('glossarSheet').classList.remove('open'); currentGlossarId=null; }
@@ -449,7 +516,7 @@ function renderGlossarInline() {
   if(q) items=items.filter(g=>g.name.toLowerCase().includes(q)||g.funktion.toLowerCase().includes(q)||g.norm.toLowerCase().includes(q));
   const list = el('g-list-inline');
   if(!items.length){list.innerHTML='<div style="font-size:.75rem;color:var(--mu);padding:8px">Nichts gefunden.</div>';return;}
-  list.innerHTML = items.map(g=>'<div class="gitem" onclick="openGlossar(\''+g.id+'\')"><div class="gicon">'+g.emoji+'</div><div><div class="gname">'+g.name+'</div><div class="gsub">'+(g.cat==='bauteil'?'🔧 Bauteil':g.cat==='norm'?'📋 Norm':'💡 Begriff')+'</div></div></div>').join('');
+  list.innerHTML = items.map(g=>'<div class="gitem" onclick="showTermPopup(\''+g.id+'\')"><div class="gicon">'+g.emoji+'</div><div><div class="gname">'+g.name+'</div><div class="gsub">'+(g.cat==='bauteil'?'🔧 Bauteil':g.cat==='norm'?'📋 Norm':'💡 Begriff')+'</div></div></div>').join('');
 }
 
 // ── SM-2 ───────────────────────────────────────────────────────────────────
@@ -642,6 +709,7 @@ async function doLogin(){
   if(el('ulbl')) el('ulbl').textContent = '👤 '+val;
   hideEl('loginWrap');
   showFlex('appWrap');
+  el('appWrap').style.width='100%';
   if(el('glossarFab')) el('glossarFab').style.display='flex';
   if(uid===ADMIN && el('adminwrap')) el('adminwrap').style.display='block';
   buildCatBar(); updSt(); setMode('k');
@@ -942,12 +1010,20 @@ function init(){
   else setSS('neu','Bitte anmelden');
 }
 
+
+document.addEventListener('click', function(e) {
+  const popup = document.getElementById('termPopup');
+  if(popup && !e.target.classList.contains('tlink') && !popup.contains(e.target)) {
+    hideTermPopup();
+  }
+});
 window.addEventListener('beforeunload',()=>{if(uid)saveCloud();});
 window.addEventListener('visibilitychange',()=>{if(document.hidden&&uid)saveCloud();});
 
 document.getElementById('loginBtn').addEventListener('click', doLogin);
 document.getElementById('nameInp').addEventListener('keydown', function(e){ if(e.key==='Enter') doLogin(); });
 window.addEventListener('load', function(){
+  initGlossar();
   var saved = localStorage.getItem('mp_user');
   if(saved){ document.getElementById('nameInp').value=saved; doLogin(); }
   else { setSS('neu','Bitte anmelden'); }
