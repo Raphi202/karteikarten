@@ -7,7 +7,7 @@
 <style>
 :root{--bg:#0f0f13;--sf:#1a1a22;--ac:#f0b429;--ac2:#4fd1a5;--tx:#e8e8f0;--mu:#8888aa;--br:rgba(255,255,255,.08);--gut:#4fd1a5;--mittel:#fbbf24;--bad:#f87060;--neu:#94a3b8;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
-body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-height:100vh;width:100%;}
+body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-height:100vh;width:100%;padding-bottom:env(safe-area-inset-bottom,0px);}
 .hdr{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:10px 14px 7px;position:sticky;top:0;z-index:50;}
 .hdr-top{display:flex;justify-content:space-between;align-items:center;}
 .hdr-title{font-size:1.1rem;color:var(--ac);font-weight:700;}
@@ -80,12 +80,12 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .pnum{font-size:.65rem;color:var(--mu);}.pnum b{color:var(--tx);}
 .ptrack{flex:1;height:4px;background:var(--br);border-radius:2px;overflow:hidden;}.pfill{height:100%;background:var(--ac);border-radius:2px;transition:width .3s;}
 .pbadge{padding:2px 8px;border-radius:10px;font-size:.62rem;background:rgba(79,209,165,.15);border:1px solid rgba(79,209,165,.3);color:var(--ac2);flex-shrink:0;}
-.content{padding:6px 12px 0;}
+.content{padding:6px 12px 0;width:100%;}
 .nxtlbl{font-size:.58rem;color:var(--mu);text-align:center;min-height:14px;margin-bottom:3px;}
 .cardwrap{width:100%;perspective:1000px;margin-bottom:8px;}
-.card{width:100%;min-height:240px;position:relative;transform-style:preserve-3d;transition:transform .45s ease;cursor:pointer;border-radius:15px;}
+.card{width:100%;min-height:200px;position:relative;transform-style:preserve-3d;transition:transform .45s ease;cursor:pointer;border-radius:15px;}
 .card.flip{transform:rotateY(180deg);}
-.face{position:absolute;inset:0;border-radius:15px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;padding:15px 14px;border:1px solid var(--br);}
+.face{position:absolute;inset:0;min-height:200px;border-radius:15px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;padding:15px 14px;border:1px solid var(--br);}
 .front{background:#1e2235;}.back{background:#1a2e1e;transform:rotateY(180deg);}
 .ibar{position:absolute;bottom:0;left:0;right:0;height:3px;border-radius:0 0 15px 15px;overflow:hidden;}
 .mdot{position:absolute;top:10px;right:10px;width:7px;height:7px;border-radius:50%;}
@@ -157,6 +157,7 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .tp-text{font-size:.74rem;line-height:1.5;color:var(--tx);margin-bottom:8px;}
 .tp-more{width:100%;padding:6px;border-radius:8px;border:1px solid rgba(240,180,41,.3);background:rgba(240,180,41,.12);color:var(--ac);font-size:.72rem;font-weight:700;cursor:pointer;}
 .tlink{color:var(--ac);text-decoration:underline;text-decoration-style:dotted;cursor:pointer;font-weight:600;}
+#appWrap{min-height:100vh;flex-direction:column;}
 </style>
 </head>
 <body>
@@ -266,7 +267,7 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
     <span class="pnum"><b id="ptot">0</b></span>
     <span class="pbadge" id="pbadge">0 ✓</span>
   </div>
-  <div class="content" id="area-k">
+  <div class="content" id="area-k" style="width:100%;">
     <div class="nxtlbl" id="nxtlbl"></div>
     <div class="cardwrap">
       <div class="card" id="thecard" onclick="flipCard()">
@@ -516,7 +517,7 @@ function renderGlossarInline() {
   if(q) items=items.filter(g=>g.name.toLowerCase().includes(q)||g.funktion.toLowerCase().includes(q)||g.norm.toLowerCase().includes(q));
   const list = el('g-list-inline');
   if(!items.length){list.innerHTML='<div style="font-size:.75rem;color:var(--mu);padding:8px">Nichts gefunden.</div>';return;}
-  list.innerHTML = items.map(g=>'<div class="gitem" onclick="showTermPopup(\''+g.id+'\')"><div class="gicon">'+g.emoji+'</div><div><div class="gname">'+g.name+'</div><div class="gsub">'+(g.cat==='bauteil'?'🔧 Bauteil':g.cat==='norm'?'📋 Norm':'💡 Begriff')+'</div></div></div>').join('');
+  list.innerHTML = items.map(g=>'<div class="gitem" onclick="openGlossar(\''+g.id+'\')"><div class="gicon">'+g.emoji+'</div><div><div class="gname">'+g.name+'</div><div class="gsub">'+(g.cat==='bauteil'?'🔧 Bauteil':g.cat==='norm'?'📋 Norm':'💡 Begriff')+'</div></div></div>').join('');
 }
 
 // ── SM-2 ───────────────────────────────────────────────────────────────────
