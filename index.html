@@ -8,19 +8,19 @@
 :root{--bg:#0f0f13;--sf:#1a1a22;--ac:#f0b429;--ac2:#4fd1a5;--tx:#e8e8f0;--mu:#8888aa;--br:rgba(255,255,255,.08);--gut:#4fd1a5;--mittel:#fbbf24;--bad:#f87060;--neu:#94a3b8;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-height:100vh;width:100%;padding-bottom:env(safe-area-inset-bottom,0px);}
-.hdr{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:10px 14px 7px;position:sticky;top:0;z-index:50;}
-.hdr-top{display:flex;justify-content:space-between;align-items:center;}
-.hdr-title{font-size:1.1rem;color:var(--ac);font-weight:700;}
-.hdr-sync{font-size:.6rem;color:var(--mu);margin-top:2px;display:flex;align-items:center;gap:5px;}
-.sdot{width:6px;height:6px;border-radius:50%;background:var(--neu);flex-shrink:0;}
+.hdr{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:8px 14px 6px;position:sticky;top:0;z-index:50;}
+.hdr-top{display:flex;align-items:center;gap:8px;}
+.hdr-title{font-size:1rem;color:var(--ac);font-weight:700;flex:1;}
+.hdr-sync{display:flex;align-items:center;gap:4px;font-size:.58rem;color:var(--mu);}
+.sdot{width:5px;height:5px;border-radius:50%;background:var(--neu);flex-shrink:0;}
 .sdot.ok{background:var(--gut);}.sdot.sy{background:var(--mittel);animation:blink 1s infinite;}.sdot.er{background:var(--bad);}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.out-btn{padding:3px 9px;border-radius:8px;font-size:.6rem;font-weight:600;cursor:pointer;background:rgba(248,112,96,.12);color:var(--bad);border:1px solid rgba(248,112,96,.3);}
-.xpbar{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:6px 14px;display:flex;align-items:center;gap:8px;cursor:pointer;}
-.lvlbadge{padding:3px 9px;border-radius:8px;background:rgba(240,180,41,.15);border:1px solid rgba(240,180,41,.3);color:var(--ac);font-size:.68rem;font-weight:700;white-space:nowrap;flex-shrink:0;}
-.xpmid{flex:1;min-width:0;}.xplbl{display:flex;justify-content:space-between;font-size:.57rem;color:var(--mu);margin-bottom:3px;}
-.xptrack{height:5px;background:var(--br);border-radius:3px;overflow:hidden;}.xpfill{height:100%;background:linear-gradient(90deg,var(--ac),#ff9500);border-radius:3px;transition:width .5s;}
-.strkbadge{padding:3px 9px;border-radius:8px;background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.25);color:#fb923c;font-size:.68rem;font-weight:700;flex-shrink:0;}
+.out-btn{padding:3px 8px;border-radius:8px;font-size:.58rem;font-weight:600;cursor:pointer;background:rgba(248,112,96,.12);color:var(--bad);border:1px solid rgba(248,112,96,.3);}
+.xpbar{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:5px 14px;display:flex;align-items:center;gap:7px;cursor:pointer;}
+.lvlbadge{padding:2px 8px;border-radius:7px;background:rgba(240,180,41,.15);border:1px solid rgba(240,180,41,.3);color:var(--ac);font-size:.63rem;font-weight:700;white-space:nowrap;flex-shrink:0;}
+.xpmid{flex:1;min-width:0;}.xplbl{display:flex;justify-content:space-between;font-size:.55rem;color:var(--mu);margin-bottom:2px;}
+.xptrack{height:3px;background:var(--br);border-radius:2px;overflow:hidden;}.xpfill{height:100%;background:linear-gradient(90deg,var(--ac),#ff9500);border-radius:2px;transition:width .5s;}
+.strkbadge{padding:2px 8px;border-radius:7px;background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.25);color:#fb923c;font-size:.63rem;font-weight:700;flex-shrink:0;}
 .xppop{position:fixed;top:95px;right:14px;z-index:999;padding:5px 12px;border-radius:20px;background:var(--ac);color:#0f0f13;font-weight:700;font-size:.78rem;opacity:0;pointer-events:none;transition:opacity .3s,transform .5s;transform:translateY(0);}
 .xppop.show{opacity:1;transform:translateY(-20px);}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:400;display:none;align-items:flex-end;justify-content:center;}
@@ -69,14 +69,15 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .modebar::-webkit-scrollbar{display:none;}
 .mbtn{flex-shrink:0;padding:7px 13px;border-radius:11px;border:1.5px solid var(--br);background:transparent;color:var(--mu);font-size:.71rem;font-weight:500;cursor:pointer;white-space:nowrap;}
 .mbtn.on{background:var(--ac);color:#0f0f13;border-color:var(--ac);font-weight:700;}
-.statsbar{width:100%;padding:6px 12px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
+.statsbar{width:100%;padding:0 12px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);max-height:0;overflow:hidden;transition:max-height .25s ease,padding .25s ease;}
+.statsbar.open{max-height:60px;padding:5px 12px;}
 .statsbar::-webkit-scrollbar{display:none;}
-.spill{flex-shrink:0;padding:4px 10px;border-radius:20px;font-size:.63rem;font-weight:600;cursor:pointer;border:1.5px solid transparent;white-space:nowrap;}
+.spill{flex-shrink:0;padding:4px 10px;border-radius:20px;font-size:.62rem;font-weight:600;cursor:pointer;border:1.5px solid transparent;white-space:nowrap;}
 .catbar{width:100%;padding:6px 12px;display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;background:var(--sf);border-bottom:1px solid var(--br);}
 .catbar::-webkit-scrollbar{display:none;}
 .catbtn{flex-shrink:0;padding:5px 11px;border-radius:20px;border:1.5px solid var(--br);background:transparent;color:var(--mu);font-size:.67rem;font-weight:500;cursor:pointer;white-space:nowrap;}
 .catbtn.on{color:#0f0f13;font-weight:700;border-color:transparent;}.catsep{flex-shrink:0;width:1px;background:var(--br);margin:0 3px;}
-.progrow{padding:6px 14px;display:flex;align-items:center;gap:7px;}
+.progrow{padding:4px 14px;display:flex;align-items:center;gap:7px;}
 .pnum{font-size:.65rem;color:var(--mu);}.pnum b{color:var(--tx);}
 .ptrack{flex:1;height:4px;background:var(--br);border-radius:2px;overflow:hidden;}.pfill{height:100%;background:var(--ac);border-radius:2px;transition:width .3s;}
 .pbadge{padding:2px 8px;border-radius:10px;font-size:.62rem;background:rgba(79,209,165,.15);border:1px solid rgba(79,209,165,.3);color:var(--ac2);flex-shrink:0;}
@@ -158,6 +159,35 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .tp-more{width:100%;padding:6px;border-radius:8px;border:1px solid rgba(240,180,41,.3);background:rgba(240,180,41,.12);color:var(--ac);font-size:.72rem;font-weight:700;cursor:pointer;}
 .tlink{color:var(--ac);text-decoration:underline;text-decoration-style:dotted;cursor:pointer;font-weight:600;}
 #appWrap{min-height:100vh;flex-direction:column;}
+
+/* ── TOP BAR (minimal) ─────────────────── */
+.topbar{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:9px 14px;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:100;}
+.topbar-title{font-size:1rem;color:var(--ac);font-weight:700;flex:1;}
+.topbar-right{display:flex;align-items:center;gap:6px;}
+.menu-btn{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;border:1.5px solid var(--br);background:transparent;color:var(--tx);font-size:.7rem;cursor:pointer;font-weight:600;}
+.menu-btn:active{background:var(--br);}
+.menu-btn .arrow{font-size:.6rem;color:var(--mu);transition:transform .2s;}
+.menu-btn.open .arrow{transform:rotate(180deg);}
+
+/* ── DROPDOWN PANEL ────────────────────── */
+.menu-panel{width:100%;background:var(--sf);border-bottom:2px solid var(--br);overflow:hidden;max-height:0;transition:max-height .3s ease;z-index:90;}
+.menu-panel.open{max-height:400px;}
+.menu-inner{padding:12px 14px 14px;}
+
+.menu-section-title{font-size:.6rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px;}
+.menu-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.chip{padding:6px 12px;border-radius:20px;border:1.5px solid var(--br);background:transparent;color:var(--mu);font-size:.7rem;font-weight:500;cursor:pointer;white-space:nowrap;}
+.chip.on{background:var(--ac);color:#0f0f13;border-color:var(--ac);font-weight:700;}
+.chip.gas-on{background:rgba(240,180,41,.2);color:#f0b429;border-color:rgba(240,180,41,.4);font-weight:700;}
+.chip.san-on{background:rgba(79,209,165,.2);color:#4fd1a5;border-color:rgba(79,209,165,.4);font-weight:700;}
+.chip.heiz-on{background:rgba(248,112,96,.2);color:#f87060;border-color:rgba(248,112,96,.4);font-weight:700;}
+.chip.mgmt-on{background:rgba(250,204,21,.2);color:#facc15;border-color:rgba(250,204,21,.4);font-weight:700;}
+.chip.qsu-on{background:rgba(96,165,250,.2);color:#60a5fa;border-color:rgba(96,165,250,.4);font-weight:700;}
+.chip.due-on{background:rgba(248,112,96,.25);color:#f87060;border-color:rgba(248,112,96,.4);font-weight:700;}
+
+.menu-stats{display:flex;gap:6px;flex-wrap:wrap;}
+.mstat{display:flex;align-items:center;gap:4px;padding:4px 9px;border-radius:20px;font-size:.63rem;font-weight:600;cursor:pointer;}
+
 </style>
 </head>
 <body>
@@ -224,47 +254,90 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 </div>
 
 <div id="appWrap" style="display:none;">
-  <div class="hdr">
-    <div class="hdr-top">
-      <div class="hdr-title">🃏 Meisterprüfung</div>
-      <div style="display:flex;align-items:center;gap:6px;">
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-title">🃏 Meisterprüfung</div>
+    <div class="topbar-right">
+      <div style="display:flex;align-items:center;gap:4px;font-size:.58rem;color:var(--mu);"><div class="sdot" id="sdot"></div><span id="stxt">...</span></div>
+      <div class="xpbar" onclick="openLvlModal()" style="border:none;padding:0;background:transparent;gap:5px;display:flex;align-items:center;cursor:pointer;">
+        <div class="lvlbadge" id="lvlbadge" style="font-size:.6rem;padding:2px 7px;">⚒️ Lv.0</div>
+        <div class="strkbadge" id="strkbadge" style="font-size:.6rem;padding:2px 7px;">🔥 0</div>
+      </div>
+      <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+        <span id="menuLabel">🃏 Alle</span>
+        <span class="arrow">▼</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- XP LEISTE (dünn, unter topbar) -->
+  <div style="width:100%;height:3px;background:var(--br);position:sticky;top:44px;z-index:99;">
+    <div id="xpfill" style="height:100%;background:linear-gradient(90deg,var(--ac),#ff9500);width:0%;transition:width .5s;"></div>
+  </div>
+
+  <!-- DROPDOWN MENÜ -->
+  <div class="menu-panel" id="menuPanel">
+    <div class="menu-inner">
+
+      <!-- Modus -->
+      <div class="menu-section-title">Modus</div>
+      <div class="menu-chips">
+        <button class="chip on" id="mb-k" onclick="setModeAndClose('k')">🃏 Karteikarten</button>
+        <button class="chip" id="mb-m" onclick="setModeAndClose('m')">🎯 Multiple Choice</button>
+        <button class="chip" id="mb-p" onclick="setModeAndClose('p')">⏱️ Prüfungs-Sim</button>
+        <button class="chip" id="mb-l" onclick="setModeAndClose('l')">📖 Lesen</button>
+        <button class="chip" id="mb-g" onclick="setModeAndClose('g')">🔍 Lexikon</button>
+      </div>
+
+      <!-- Kategorie -->
+      <div class="menu-section-title">Kategorie</div>
+      <div class="menu-chips" id="catChips">
+        <button class="chip on" data-cat="all" onclick="selCatAndClose('all')">📚 Alle</button>
+        <button class="chip" data-cat="gas" onclick="selCatAndClose('gas')">🔥 Gas</button>
+        <button class="chip" data-cat="san" onclick="selCatAndClose('san')">💧 Sanitär</button>
+        <button class="chip" data-cat="heiz" onclick="selCatAndClose('heiz')">🏠 Heizung & MSR</button>
+        <button class="chip" data-cat="mgmt" onclick="selCatAndClose('mgmt')">💶 Fachmanagement</button>
+        <button class="chip" data-cat="qsu" onclick="selCatAndClose('qsu')">🛡️ QSU</button>
+        <button class="chip" data-cat="_due" onclick="selCatAndClose('_due')">🔔 Fällig <span id="st-d">0</span></button>
+        <button class="chip" data-cat="_wk" onclick="selCatAndClose('_wk')">⚠️ Schwach <span id="st-w">0</span></button>
+        <button class="chip" data-cat="_gut" onclick="selCatAndClose('_gut')">✅ Sehr gut <span id="st-g">0</span></button>
+        <button class="chip" data-cat="_neu" onclick="selCatAndClose('_neu')">❓ Neu <span id="st-n">0</span></button>
+      </div>
+
+      <!-- Stats -->
+      <div class="menu-section-title">Statistik</div>
+      <div class="menu-stats">
+        <span class="mstat" style="background:rgba(240,180,41,.1);color:var(--ac);">📚 <span id="st-a">0</span> Karten</span>
+        <span class="mstat" style="background:rgba(248,112,96,.1);color:var(--bad);">🔔 <span id="st-d2">0</span> fällig</span>
+        <span class="mstat" style="background:rgba(79,209,165,.1);color:var(--gut);">✅ <span id="st-g2">0</span> gut</span>
+        <span class="mstat" style="background:rgba(148,163,184,.08);color:var(--neu);">❓ <span id="st-n2">0</span> neu</span>
+        <span style="font-size:.6rem;color:var(--mu);" id="xplbl">0 XP · <span id="lvlname">Lehrling</span></span>
+      </div>
+
+      <!-- Admin (nur für raphael) -->
+      <div id="adminwrap" style="display:none;margin-top:12px;">
+        <div class="menu-section-title">Admin</div>
+        <button class="admintog" onclick="toggleAdmin()" style="font-size:.65rem;padding:5px 10px;width:auto;border-radius:20px;"><span>👑 Benutzer-Übersicht</span><span id="adminarrow"> ▼</span></button>
+        <div class="adminpanel" id="adminpanel"><div class="admininner" id="adminlist">Lädt...</div></div>
+      </div>
+
+      <!-- Abmelden -->
+      <div style="margin-top:12px;">
         <span style="font-size:.6rem;color:var(--mu);" id="ulbl"></span>
-        <button class="out-btn" onclick="doLogout()">Abmelden</button>
+        <button class="out-btn" onclick="doLogout()" style="margin-left:8px;">Abmelden</button>
       </div>
     </div>
-    <div class="hdr-sync"><div class="sdot" id="sdot"></div><span id="stxt">Verbinde...</span></div>
   </div>
-  <div class="xpbar" onclick="openLvlModal()">
-    <div class="lvlbadge" id="lvlbadge">&#9874;&#65039; Lv.0</div>
-    <div class="xpmid">
-      <div class="xplbl"><span id="lvlname">Lehrling</span><span id="xplbl">0 XP</span></div>
-      <div class="xptrack"><div class="xpfill" id="xpfill" style="width:0%"></div></div>
-    </div>
-    <div class="strkbadge" id="strkbadge">🔥 0</div>
+
+  <!-- PROGRESS (kompakt, sticky unter menu) -->
+  <div class="progrow" id="progrow" style="background:var(--sf);border-bottom:1px solid var(--br);">
+    <span style="font-size:.58rem;color:var(--mu);"><b id="pcur">1</b>/<b id="ptot">0</b></span>
+    <div class="ptrack" style="flex:1;"><div class="pfill" id="pfill" style="width:0%"></div></div>
+    <span class="pbadge" id="pbadge">0 ✓</span>
   </div>
-  <div class="adminwrap" id="adminwrap" style="display:none;">
-    <button class="admintog" onclick="toggleAdmin()"><span>👑 Benutzer-Übersicht</span><span id="adminarrow">▼</span></button>
-    <div class="adminpanel" id="adminpanel"><div class="admininner" id="adminlist">Lädt...</div></div>
-  </div>
-  <div class="modebar">
-    <button class="mbtn on" id="mb-k" onclick="setMode('k')">🃏 Karteikarten</button>
-    <button class="mbtn" id="mb-m" onclick="setMode('m')">🎯 Multiple Choice</button>
-    <button class="mbtn" id="mb-p" onclick="setMode('p')">⏱️ Prüfung</button>
-    <button class="mbtn" id="mb-l" onclick="setMode('l')">📖 Lesen</button>
-    <button class="mbtn" id="mb-g" onclick="setMode('g')">🔍 Lexikon</button>
-  </div>
-  <div class="statsbar">
-    <span class="spill" style="background:rgba(240,180,41,.1);color:var(--ac);border-color:rgba(240,180,41,.2);" onclick="selCat('all')">📚 <span id="st-a">0</span></span>
-    <span class="spill" style="background:rgba(248,112,96,.12);color:var(--bad);border-color:rgba(248,112,96,.2);" onclick="selCat('_due')">🔔 <span id="st-d">0</span></span>
-    <span class="spill" style="background:rgba(251,191,36,.12);color:var(--mittel);border-color:rgba(251,191,36,.2);" onclick="selCat('_wk')">⚠️ <span id="st-w">0</span></span>
-    <span class="spill" style="background:rgba(79,209,165,.12);color:var(--gut);border-color:rgba(79,209,165,.2);" onclick="selCat('_gut')">✅ <span id="st-g">0</span></span>
-    <span class="spill" style="background:rgba(148,163,184,.1);color:var(--neu);border-color:rgba(148,163,184,.15);" onclick="selCat('_neu')">❓ <span id="st-n">0</span></span>
-  </div>
-  <div class="catbar" id="catbar"></div>
   <div class="progrow" id="progrow">
-    <span class="pnum"><b id="pcur">1</b></span>
-    <div class="ptrack"><div class="pfill" id="pfill" style="width:0%"></div></div>
-    <span class="pnum"><b id="ptot">0</b></span>
+    <span style="font-size:.6rem;color:var(--mu);"><b id="pcur">1</b>/<b id="ptot">0</b></span>
+    <div class="ptrack" style="flex:1;"><div class="pfill" id="pfill" style="width:0%"></div></div>
     <span class="pbadge" id="pbadge">0 ✓</span>
   </div>
   <div class="content" id="area-k" style="width:100%;">
@@ -591,8 +664,12 @@ function calcSt(){
 
 function updSt(){
   const s=calcSt();
-  el('st-a').textContent=CARDS.length; el('st-d').textContent=s.due;
-  el('st-w').textContent=s.wk; el('st-g').textContent=s.gut; el('st-n').textContent=s.neu;
+  el('st-a').textContent=CARDS.length;
+  el('st-d').textContent=s.due; if(el('st-d2'))el('st-d2').textContent=s.due;
+  el('st-w').textContent=s.wk;
+  el('st-g').textContent=s.gut; if(el('st-g2'))el('st-g2').textContent=s.gut;
+  el('st-n').textContent=s.neu; if(el('st-n2'))el('st-n2').textContent=s.neu;
+  updMenuLabel();
 }
 
 function updProg(){
@@ -780,6 +857,7 @@ function selCat(catId){
     if(b.dataset.id===catId){const f=BCATS.find(([i])=>i===catId);if(f&&f[2])b.style.cssText=f[2]+'font-weight:700;';}
   });
   setMode(mode);
+  updMenuLabel();
 }
 
 // ── MODE ───────────────────────────────────────────────────────────────────
@@ -795,6 +873,7 @@ function setMode(m){
   else if(m==='p'){el('area-p').style.display='block';el('pstart').style.display='flex';hideEl('pquiz');el('presult').style.display='none';clearInterval(pIv);}
   else if(m==='l'){buildLesen();el('area-l').style.display='block';}
   else if(m==='g'){el('area-g').style.display='block';renderGlossarInline();}
+  updMenuLabel();
 }
 
 // ── KARTEN ─────────────────────────────────────────────────────────────────
@@ -1011,6 +1090,60 @@ function init(){
   else setSS('neu','Bitte anmelden');
 }
 
+
+
+// ── DROPDOWN MENÜ ─────────────────────────────────────────────────────────
+let menuOpen = false;
+
+function toggleMenu() {
+  menuOpen = !menuOpen;
+  const panel = document.getElementById('menuPanel');
+  const btn = document.getElementById('menuBtn');
+  panel.classList.toggle('open', menuOpen);
+  btn.classList.toggle('open', menuOpen);
+}
+
+function closeMenu() {
+  menuOpen = false;
+  document.getElementById('menuPanel').classList.remove('open');
+  document.getElementById('menuBtn').classList.remove('open');
+}
+
+function setModeAndClose(m) {
+  setMode(m);
+  closeMenu();
+}
+
+function selCatAndClose(catId) {
+  selCat(catId);
+  closeMenu();
+}
+
+function updMenuLabel() {
+  // Zeige aktuellen Modus + Kategorie im Button
+  const modeNames = {k:'🃏',m:'🎯',p:'⏱️',l:'📖',g:'🔍'};
+  const catNames = {
+    all:'Alle', gas:'Gas', san:'Sanitär', heiz:'Heizung',
+    mgmt:'Management', qsu:'QSU', _due:'Fällig', _wk:'Schwach',
+    _gut:'Sehr gut', _neu:'Neu'
+  };
+  const mIcon = modeNames[mode] || '🃏';
+  const cName = catNames[cat] || cat;
+  const lbl = document.getElementById('menuLabel');
+  if(lbl) lbl.textContent = mIcon + ' ' + cName;
+
+  // Mode Chips aktiv setzen
+  ['k','m','p','l','g'].forEach(m2 => {
+    const b = document.getElementById('mb-'+m2);
+    if(b) b.classList.toggle('on', m2===mode);
+  });
+
+  // Kategorie Chips aktiv setzen
+  document.querySelectorAll('#catChips .chip').forEach(b => {
+    const c = b.dataset.cat;
+    b.classList.toggle('on', c===cat);
+  });
+}
 
 document.addEventListener('click', function(e) {
   const popup = document.getElementById('termPopup');
