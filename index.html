@@ -287,7 +287,7 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
   <div class="topbar">
     <div class="topbar-title">🃏 Meisterprüfung</div>
     <div class="topbar-right">
-      <div class="sdot" id="sdot" title="" style="cursor:default;"></div>
+      <div class="sdot" id="sdot" title="" style="cursor:default;"></div><span id="stxt" style="display:none;"></span>
       <div class="lvlbadge" onclick="openLvlModal()" style="cursor:pointer;">
         <span class="lv-icon" id="lvl-icon">⚒️</span>
         <span class="lv-num">Lv.<b id="lvl-num">0</b></span>
@@ -725,7 +725,7 @@ async function sbF(path,method,body){
   const t=await r.text(); return t?JSON.parse(t):null;
 }
 
-function setSS(s,t){el('sdot').className='sdot '+s; el('stxt').textContent=t;}
+function setSS(s,t){if(el('sdot'))el('sdot').className='sdot '+s; if(el('stxt'))el('stxt').textContent=t;}
 
 async function loadCloud(){
   setSS('sy','Lade...');
