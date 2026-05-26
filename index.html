@@ -8,19 +8,19 @@
 :root{--bg:#0f0f13;--sf:#1a1a22;--ac:#f0b429;--ac2:#4fd1a5;--tx:#e8e8f0;--mu:#8888aa;--br:rgba(255,255,255,.08);--gut:#4fd1a5;--mittel:#fbbf24;--bad:#f87060;--neu:#94a3b8;}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
 body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-height:100vh;width:100%;padding-bottom:env(safe-area-inset-bottom,0px);}
-.hdr{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:8px 14px 6px;position:sticky;top:0;z-index:50;}
-.hdr-top{display:flex;align-items:center;gap:8px;}
-.hdr-title{font-size:1rem;color:var(--ac);font-weight:700;flex:1;}
-.hdr-sync{display:flex;align-items:center;gap:4px;font-size:.58rem;color:var(--mu);}
-.sdot{width:5px;height:5px;border-radius:50%;background:var(--neu);flex-shrink:0;}
-.sdot.ok{background:var(--gut);}.sdot.sy{background:var(--mittel);animation:blink 1s infinite;}.sdot.er{background:var(--bad);}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.out-btn{padding:3px 8px;border-radius:8px;font-size:.58rem;font-weight:600;cursor:pointer;background:rgba(248,112,96,.12);color:var(--bad);border:1px solid rgba(248,112,96,.3);}
-.xpbar{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:5px 14px;display:flex;align-items:center;gap:7px;cursor:pointer;}
-.lvlbadge{padding:2px 8px;border-radius:7px;background:rgba(240,180,41,.15);border:1px solid rgba(240,180,41,.3);color:var(--ac);font-size:.63rem;font-weight:700;white-space:nowrap;flex-shrink:0;}
-.xpmid{flex:1;min-width:0;}.xplbl{display:flex;justify-content:space-between;font-size:.55rem;color:var(--mu);margin-bottom:2px;}
-.xptrack{height:3px;background:var(--br);border-radius:2px;overflow:hidden;}.xpfill{height:100%;background:linear-gradient(90deg,var(--ac),#ff9500);border-radius:2px;transition:width .5s;}
-.strkbadge{padding:2px 8px;border-radius:7px;background:rgba(251,146,60,.12);border:1px solid rgba(251,146,60,.25);color:#fb923c;font-size:.63rem;font-weight:700;flex-shrink:0;}
+
+
+
+
+
+
+50%{opacity:.3}}
+
+
+
+
+
+
 .xppop{position:fixed;top:95px;right:14px;z-index:999;padding:5px 12px;border-radius:20px;background:var(--ac);color:#0f0f13;font-weight:700;font-size:.78rem;opacity:0;pointer-events:none;transition:opacity .3s,transform .5s;transform:translateY(0);}
 .xppop.show{opacity:1;transform:translateY(-20px);}
 .overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:400;display:none;align-items:flex-end;justify-content:center;}
@@ -161,13 +161,13 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 #appWrap{min-height:100vh;flex-direction:column;}
 
 /* ── TOP BAR (minimal) ─────────────────── */
-.topbar{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:9px 14px;display:flex;align-items:center;gap:8px;position:sticky;top:0;z-index:100;}
-.topbar-title{font-size:1rem;color:var(--ac);font-weight:700;flex:1;}
-.topbar-right{display:flex;align-items:center;gap:6px;}
-.menu-btn{display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;border:1.5px solid var(--br);background:transparent;color:var(--tx);font-size:.7rem;cursor:pointer;font-weight:600;}
-.menu-btn:active{background:var(--br);}
-.menu-btn .arrow{font-size:.6rem;color:var(--mu);transition:transform .2s;}
-.menu-btn.open .arrow{transform:rotate(180deg);}
+
+
+
+
+
+
+
 
 /* ── DROPDOWN PANEL ────────────────────── */
 .menu-panel{width:100%;background:var(--sf);border-bottom:2px solid var(--br);overflow:hidden;max-height:0;transition:max-height .3s ease;z-index:90;}
@@ -188,6 +188,35 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
 .menu-stats{display:flex;gap:6px;flex-wrap:wrap;}
 .mstat{display:flex;align-items:center;gap:4px;padding:4px 9px;border-radius:20px;font-size:.63rem;font-weight:600;cursor:pointer;}
 
+
+.topbar{width:100%;background:var(--sf);border-bottom:1px solid var(--br);padding:10px 14px 8px;display:flex;align-items:center;gap:10px;position:sticky;top:0;z-index:100;}
+.topbar-title{font-family:system-ui,sans-serif;font-size:1.15rem;color:var(--ac);font-weight:800;flex:1;letter-spacing:-.01em;}
+.topbar-right{display:flex;align-items:center;gap:7px;}
+
+/* Sync Dot klein */
+.sdot{width:7px;height:7px;border-radius:50%;background:var(--neu);flex-shrink:0;}
+.sdot.ok{background:var(--gut);}.sdot.sy{background:var(--mittel);animation:blink 1s infinite;}.sdot.er{background:var(--bad);}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* Level Badge — groß und auffällig */
+.lvlbadge{display:flex;align-items:center;gap:4px;padding:5px 10px;border-radius:20px;background:rgba(240,180,41,.15);border:1.5px solid rgba(240,180,41,.35);color:var(--ac);font-size:.78rem;font-weight:800;cursor:pointer;white-space:nowrap;}
+.lvlbadge .lv-icon{font-size:1rem;}
+.lvlbadge .lv-num{font-size:.78rem;}
+
+/* Streak Badge — groß */
+.strkbadge{display:flex;align-items:center;gap:3px;padding:5px 10px;border-radius:20px;background:rgba(251,146,60,.12);border:1.5px solid rgba(251,146,60,.3);color:#fb923c;font-size:.78rem;font-weight:800;}
+.strkbadge .sk-icon{font-size:1rem;}
+
+/* Menü Button */
+.menu-btn{display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:20px;border:1.5px solid var(--br);background:var(--cf);color:var(--tx);font-size:.72rem;cursor:pointer;font-weight:600;white-space:nowrap;}
+.menu-btn .arrow{font-size:.6rem;color:var(--mu);transition:transform .2s;}
+.menu-btn.open .arrow{transform:rotate(180deg);}
+
+/* XP Leiste unter topbar */
+.xp-strip{width:100%;height:3px;background:var(--br);position:sticky;top:54px;z-index:99;}
+.xp-strip-fill{height:100%;background:linear-gradient(90deg,var(--ac),#ff9500);transition:width .6s ease;}
+
+.out-btn{padding:5px 10px;border-radius:20px;font-size:.65rem;font-weight:600;cursor:pointer;background:rgba(248,112,96,.12);color:var(--bad);border:1.5px solid rgba(248,112,96,.25);}
 </style>
 </head>
 <body>
@@ -258,21 +287,25 @@ body{background:var(--bg);color:var(--tx);font-family:system-ui,sans-serif;min-h
   <div class="topbar">
     <div class="topbar-title">🃏 Meisterprüfung</div>
     <div class="topbar-right">
-      <div style="display:flex;align-items:center;gap:4px;font-size:.58rem;color:var(--mu);"><div class="sdot" id="sdot"></div><span id="stxt">...</span></div>
-      <div class="xpbar" onclick="openLvlModal()" style="border:none;padding:0;background:transparent;gap:5px;display:flex;align-items:center;cursor:pointer;">
-        <div class="lvlbadge" id="lvlbadge" style="font-size:.6rem;padding:2px 7px;">⚒️ Lv.0</div>
-        <div class="strkbadge" id="strkbadge" style="font-size:.6rem;padding:2px 7px;">🔥 0</div>
+      <div class="sdot" id="sdot" title="" style="cursor:default;"></div>
+      <div class="lvlbadge" onclick="openLvlModal()" style="cursor:pointer;">
+        <span class="lv-icon" id="lvl-icon">⚒️</span>
+        <span class="lv-num">Lv.<b id="lvl-num">0</b></span>
+      </div>
+      <div class="strkbadge">
+        <span class="sk-icon">🔥</span>
+        <b id="streak-num">0</b>
       </div>
       <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
-        <span id="menuLabel">🃏 Alle</span>
+        <span id="menuLabel">Alle</span>
         <span class="arrow">▼</span>
       </button>
     </div>
   </div>
 
-  <!-- XP LEISTE (dünn, unter topbar) -->
-  <div style="width:100%;height:3px;background:var(--br);position:sticky;top:44px;z-index:99;">
-    <div id="xpfill" style="height:100%;background:linear-gradient(90deg,var(--ac),#ff9500);width:0%;transition:width .5s;"></div>
+  <!-- XP LEISTE -->
+  <div class="xp-strip">
+    <div class="xp-strip-fill" id="xpfill" style="width:0%"></div>
   </div>
 
   <!-- DROPDOWN MENÜ -->
@@ -626,11 +659,16 @@ function addXP(amt){
 
 function updXP(){
   const l=getLvl(xp);
-  el('lvlbadge').textContent=l.icon+' Lv.'+l.lvl;
-  el('lvlname').textContent=l.name;
-  el('xplbl').textContent=xp+' XP';
-  el('xpfill').style.width=l.pct+'%';
-  el('strkbadge').textContent='🔥 '+streak;
+  // Neue Top-Bar IDs
+  if(el('lvl-icon')) el('lvl-icon').textContent=l.icon;
+  if(el('lvl-num')) el('lvl-num').textContent=l.lvl;
+  if(el('streak-num')) el('streak-num').textContent=streak;
+  if(el('xpfill')) el('xpfill').style.width=l.pct+'%';
+  // Menü-interne IDs
+  if(el('lvlname')) el('lvlname').textContent=l.name+' · '+xp+' XP';
+  if(el('xplbl')) el('xplbl').textContent=l.name+' · '+xp+' XP';
+  // Altes lvlbadge falls noch vorhanden
+  if(el('lvlbadge')) el('lvlbadge').textContent=l.icon+' Lv.'+l.lvl;
 }
 
 function showLU(l){
